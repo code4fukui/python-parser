@@ -9,7 +9,7 @@ If you want to parse Python in the browser, then this is your project! I made th
 
 ### Using in the Browser / Deno
 
-1) `import pythonParser from "https://code4fukui.github.io/python-parser/parser.js";`
+1) `import { pythonParser } from "https://code4fukui.github.io/python-parser/parser.js";`
 2) Call the `pythonParser.parse(/*...code...*/)` method.
 
 ## Parser Output
