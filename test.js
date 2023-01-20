@@ -1,12 +1,13 @@
-var fs = require("fs");
-var path = require("path");
+import * as t from "https://deno.land/std/testing/asserts.ts";
+import { pythonParser } from "./parser.js";
 
-var pythonParser = require("./parser.js");
+Deno.test("all", async () => {
+  const testFile = await Deno.readTextFile("test.py");
 
-var testFile = fs.readFileSync(path.join(__dirname, "test.py")).toString();
-
-var output = JSON.stringify(pythonParser.parse(testFile), null, 2);
-
-var testOutput = fs.readFileSync(path.join(__dirname, "test-output.json")).toString();
-
-if(output !== testOutput) throw "Wrong output";
+  const ast = pythonParser.parse(testFile);
+  
+  const output = JSON.stringify(ast, null, 2);
+  
+  const expect = await Deno.readTextFile("test-output.json");
+  t.assertEquals(output, expect);
+});

@@ -7,14 +7,9 @@ If you want to parse Python in the browser, then this is your project! I made th
 
 ## How to Use
 
-### Using in the Browser
+### Using in the Browser / Deno
 
-1) Add the [parser.js](./parser.js) file to your page
-2) Call the `pythonParser.parse(/*...code...*/)` method.
-
-### Using in NodeJS
-
-1) `require("parser.js")`
+1) `import pythonParser from "https://code4fukui.github.io/python-parser/parser.js";`
 2) Call the `pythonParser.parse(/*...code...*/)` method.
 
 ## Parser Output
